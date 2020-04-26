@@ -1,0 +1,9 @@
+.search_history {
+  width: 95%;
+  margin: 20rpx auto;
+}
+.tar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

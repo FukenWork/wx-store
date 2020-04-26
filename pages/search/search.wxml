@@ -1,0 +1,19 @@
+<view class="cu-bar bg-cyan search">
+  <view class="search-form radius">
+    <text class="cuIcon-search"></text>
+    <input bindinput="inputWord" type="text" placeholder="搜索图片、文章、视频" value="{{searchWord}}" confirm-type="search" bindconfirm="bindconfirm"></input>
+    <text class="cuIcon-close" catchtap="cleanlWord"></text>
+  </view>
+  <view class="action" bindtap="searchButton">
+    <text>搜索</text>
+  </view>
+</view>
+<!-- 搜索历史 -->
+<view class="search_history">
+<view class="tar">
+  <view>搜索历史</view>
+  <view bindtap="cleanStorage">清空
+    <text class="cuIcon-delete lg"></text>
+  </view>
+</view>
+</view>

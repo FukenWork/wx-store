@@ -1,0 +1,83 @@
+import { HEADER, METHOD } from '../config/constants'
+import { ENV } from '../config/env'
+const interceptors = []
+
+class Request {
+  request(option) {
+    const { url, method, data = {}, header } = option
+
+    let requestheader = { ...HEADER, ...header }
+
+    return new Promise((resolve, reject) => {
+      try {
+        wx.getNetworkType({
+          success: res => {
+            if (res.networkType !== 'none') {
+              wx.request({
+                url: (`${ENV.BASE_URL}${url}`),
+                method: method || METHOD.GET,
+                data,
+                header: requestheader,
+                success: (res) => {
+                  return res.data
+                },
+                fail: (err) => {
+                  err && err.errMsg && err.errMsg.indexOf('request:fail') !== -1 ? wx.showToast({
+                    title: '网络连接不可用，请稍后重试',
+                    icon: 'none',
+                    duration: 1000
+                  }) : wx.showToast({
+                    title: JSON.stringify(err),
+                    icon: 'none',
+                    duration: 10000
+                  });
+                }
+              })
+            } else {
+              wx.showToast({
+                title: '网络连接不可用，请稍后重试',
+                icon: 'none',
+                duration: 1000
+              })
+            }
+
+          }
+        })
+
+      } catch (err) {
+        wx.showToast({ title: err.message, icon: 'none' })
+      }
+    });
+  }
+
+  get(url, data, header = {}) {
+    return this.request({ url, method: METHOD.GET, data, header })
+  }
+
+  delete(url, data, header = {}) {
+    return this.request({ url, method: METHOD.DELETE, data, header })
+  }
+
+  post(url, data, header = {}) {
+    return this.request({ url, method: METHOD.POST, data, header })
+  }
+
+  put(url, data, header = {}) {
+    return this.request({ url, method: METHOD.PUT, data, header })
+  }
+
+  all(tasks) {
+    return Promise.all(tasks)
+  }
+}
+export function addDefaultInterceptor() {
+  interceptors.push((res, resolve, reject) => {
+    const status = res.statusCode;
+    if (status !== 200 && status !== 201) {
+      return reject(new Error(`internet error: ${status}`))
+    }
+    const body = res.data;
+    return resolve(body)
+  })
+}
+export const request = new Request()

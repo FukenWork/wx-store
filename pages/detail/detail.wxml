@@ -1,0 +1,28 @@
+ <view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action"  data-cur="basics">
+    <button open-type="share" class="button">
+      <text class="cuIcon-share lg text-gray"></text>
+      分享
+    </button>
+  </view>
+  <view class="action" data-cur="component">
+    <view class='cuIcon-cu-image'>
+      <text class="cuIcon-check lg text-gray"></text>
+    </view>
+    <view class="{{PageCur=='component'?'text-green':'text-gray'}}">应用</view>
+  </view>
+  <view class="action" data-cur="plugin" bindtap="favorite">
+    <view class='cuIcon-cu-image'>
+      <text wx:if="{{show}}" class="cuIcon-favorfill lg text-gray"></text>
+      <text wx:else class="cuIcon-favor lg text-gray"></text>
+    </view>
+    <view class="{{PageCur=='plugin'?'text-green':'text-gray'}}">收藏</view>
+  </view>
+
+  <view class="action" data-cur="about">
+    <view class='cuIcon-cu-image'>
+      <text class="cuIcon-appreciatefill lg text-gray"></text>
+    </view>
+    <view class="{{PageCur=='about'?'text-green':'text-gray'}}">点赞</view>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+
+<view wx:if="{{shopList.length === 0}}">空空如也</view>

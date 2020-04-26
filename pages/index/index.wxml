@@ -1,0 +1,50 @@
+<banner-item swiperList="{{swiperList}}" />
+<view class="nav-list">
+  <view wx:for="{{navList}}" wx:key="index" class="icon-key" bindtap="choosePath" data-item="{{item.path}}">
+    <image src="{{item.icon}}" style="width:70rpx;height:70rpx;display: block"></image>
+    <text style="margin-left:6rpx">{{item.navName}}</text>
+  </view>
+</view>
+ <view class="cu-bar search bg-white">
+    <view class="search-form round" bindtap="gosearch">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="请输入水果名称" confirm-type="search"></input>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="basics">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/basics{{PageCur=='basics'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='basics'?'text-green':'text-gray'}}">元素</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="component">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/component{{PageCur=='component'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='component'?'text-green':'text-gray'}}">组件</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="plugin">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/plugin{{PageCur=='plugin'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='plugin'?'text-green':'text-gray'}}">购物车</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="about">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='about'?'text-green':'text-gray'}}">我的</view>
+  </view>
+</view>

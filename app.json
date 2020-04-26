@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/search/search",
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/own/own",
+    "pages/shop-car/shop-car",
+    "pages/category/category",
+    "pages/address/address"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "service",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}
