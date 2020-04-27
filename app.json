@@ -1,12 +1,14 @@
 {
   "pages": [
-    "pages/search/search",
     "pages/index/index",
     "pages/detail/detail",
     "pages/own/own",
-    "pages/shop-car/shop-car",
     "pages/category/category",
-    "pages/address/address"
+    "pages/shop-car/shop-car",
+    "pages/search/search",
+    "pages/address/address",
+    "pages/address/address-add/address-add",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "dark",

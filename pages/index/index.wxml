@@ -12,39 +12,29 @@
     </view>
   </view>
 
-
-
-
-
-
-
-
-
-
-
 <view class="cu-bar tabbar bg-white shadow foot">
-  <view class="action" bindtap="NavChange" data-cur="basics">
+  <view class="action" bindtap="navChange" data-cur="basics">
     <view class='cuIcon-cu-image'>
-      <image src="/images/tabbar/basics{{PageCur=='basics'?'_cur':''}}.png"></image>
+      <image src="/images/tabbar/basics{{pageCur=='basics'?'_cur':''}}.png"></image>
     </view>
-    <view class="{{PageCur=='basics'?'text-green':'text-gray'}}">元素</view>
+    <view class="{{pageCur=='basics'?'text-green':'text-gray'}}">首页</view>
   </view>
-  <view class="action" bindtap="NavChange" data-cur="component">
+  <view class="action" bindtap="navChange" data-cur="component">
     <view class='cuIcon-cu-image'>
-      <image src="/images/tabbar/component{{PageCur=='component'?'_cur':''}}.png"></image>
+      <image src="/images/tabbar/component{{pageCur=='component'?'_cur':''}}.png"></image>
     </view>
-    <view class="{{PageCur=='component'?'text-green':'text-gray'}}">组件</view>
+    <view class="{{pageCur=='component'?'text-green':'text-gray'}}">分类</view>
   </view>
-  <view class="action" bindtap="NavChange" data-cur="plugin">
+  <view class="action" bindtap="navChange" data-cur="plugin" data-url="/pages/shop-car/shop-car">
     <view class='cuIcon-cu-image'>
-      <image src="/images/tabbar/plugin{{PageCur=='plugin'?'_cur':''}}.png"></image>
+      <image src="/images/tabbar/plugin{{pageCur=='plugin'?'_cur':''}}.png"></image>
     </view>
-    <view class="{{PageCur=='plugin'?'text-green':'text-gray'}}">购物车</view>
+    <view class="{{pageCur=='plugin'?'text-green':'text-gray'}}">购物车</view>
   </view>
-  <view class="action" bindtap="NavChange" data-cur="about">
+  <view class="action" bindtap="navChange" data-cur="about" data-url="/pages/own/own">
     <view class='cuIcon-cu-image'>
-      <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image>
+      <image src="/images/tabbar/about{{pageCur=='about'?'_cur':''}}.png"></image>
     </view>
-    <view class="{{PageCur=='about'?'text-green':'text-gray'}}">我的</view>
+    <view class="{{pageCur=='about'?'text-green':'text-gray'}}">我的</view>
   </view>
 </view>

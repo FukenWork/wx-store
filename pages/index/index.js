@@ -29,7 +29,8 @@ const page = {
       type: 'image',
       url: '../../images/banner/6.jpg'
     }],
-    navList: HEADER_NAV_LIST
+    navList: HEADER_NAV_LIST,
+    pageCur: 'basics'
   },
   async onLoad() {
     let code = await wxApi.login();
@@ -43,7 +44,16 @@ const page = {
     wx.navigateTo({
       url: '../search/search',
     })
-  }
+  },
+  navChange(e) {
+    console.log(e)
+    this.setData({
+      pageCur: e.currentTarget.dataset.cur
+    });
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url
+    })
+  },
 }
 
 export default Page(page)
