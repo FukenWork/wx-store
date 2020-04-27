@@ -2,8 +2,14 @@
   width: 95%;
   margin: 20rpx auto;
 }
+.cu-tag {
+  margin-right: 20rpx;
+}
 .tar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.noData {
+  margin: 300rpx 300rpx;
 }

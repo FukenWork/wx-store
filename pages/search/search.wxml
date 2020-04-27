@@ -8,12 +8,20 @@
     <text>搜索</text>
   </view>
 </view>
+<!-- 搜索展示的事务 -->
 <!-- 搜索历史 -->
-<view class="search_history">
-<view class="tar">
-  <view>搜索历史</view>
-  <view bindtap="cleanStorage">清空
-    <text class="cuIcon-delete lg"></text>
+<view class="search_history" wx:if="{{show}}">
+  <view class="tar">
+    <view>搜索历史</view>
+    <view bindtap="cleanStorage">清空
+      <text class="cuIcon-delete lg"></text>
+    </view>
+  </view>
+  <view class="padding bg-white solid-bottom" style="margin-top:20rpx" wx:if="{{historyList.length !== 0}}">
+    <view class="cu-tag" wx:for="{{historyList}}" wx:key="index" wx:for-index="idx" wx:for-item="item">{{item}}</view>
   </view>
 </view>
+<view wx:else>
+  <view wx:if="list.length !== 0"></view>
+  <view wx:if="list.length === 0" class="noData">暂无数据</view>
 </view>

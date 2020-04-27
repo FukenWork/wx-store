@@ -1,2 +1,10 @@
-
 <view wx:if="{{shopList.length === 0}}">空空如也</view>
+
+<view class="bottom_bar">
+  <view>全选</view>
+  <view>总计：￥</view>
+  <view>
+    <view class="button" style="background-color: blue;">编辑</view>
+    <view class="button" style="background-color: red;">提交</view>
+  </view>
+</view>
