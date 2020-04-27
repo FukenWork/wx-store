@@ -19,7 +19,7 @@
     </view>
     <view class="{{pageCur=='basics'?'text-green':'text-gray'}}">首页</view>
   </view>
-  <view class="action" bindtap="navChange" data-cur="component">
+  <view class="action" bindtap="navChange" data-cur="component" data-url="/pages/category/category">
     <view class='cuIcon-cu-image'>
       <image src="/images/tabbar/component{{pageCur=='component'?'_cur':''}}.png"></image>
     </view>

@@ -45,8 +45,8 @@ const page = {
       url: '../search/search',
     })
   },
+  // 点击跳转导航
   navChange(e) {
-    console.log(e)
     this.setData({
       pageCur: e.currentTarget.dataset.cur
     });
