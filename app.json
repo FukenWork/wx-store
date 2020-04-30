@@ -1,13 +1,13 @@
 {
   "pages": [
+    "pages/address/address",
     "pages/index/index",
     "pages/detail/detail",
     "pages/own/own",
     "pages/category/category",
     "pages/shop-car/shop-car",
     "pages/search/search",
-    "pages/address/address",
-    "pages/address/address-add/address-add",
+    "pages/address/address-add/address-add",    
     "pages/feedback/feedback"
   ],
   "window": {

@@ -1,21 +1,45 @@
 <view class="container">
-  <view class="address-list" wx:if="{{ addressList.length > 0 }}">
-    <view class="item" wx:for="{{addressList}}" wx:key="index" bindtap="addressAddOrUpdate" data-address-id="{{item.id}}">
-      <view class="l">
-        <view class="name">{{item.name}}</view>
-        <view class="default" wx:if="{{item.is_default}}">默认</view>
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-content">
+    是否确认删除。
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+<view class="containers">
+  <view wx:for="{{list}}" wx:key="index" class="box-content" wx:if="{{list.length !== 0}}"
+    data-index="{{index}}">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:key>
+
+      <view class="content">
+      <view style="{{item.txtStyle}}" class='item' data-index='{{index}}' bindtouchstart="touchstart"
+          bindtouchmove="touchmove" bindtouchend="touchE">
+          <view class="listitem" catchtap="godetail" wx:key="index" data-key="{{item}}">
+            <view class="item-summary-nomal">
+              <view class="item-value">{{item.id}}
+              </view>
+            </view>
+          </view>
+        </view>
       </view>
-      <view class="c">
-        <view class="mobile">{{item.mobile}}</view>
-        <view class="address">{{item.full_region + item.address}}</view>
-      </view>
-      <view class="r">
-        <image catchtap="deleteAddress" data-address-id="{{item.id}}" class="del" src="/static/images/del-address.png"></image>
+      <view class="action-wrap">
+        <view class="action del" data-id="{{item.id}}" catchtap="delBtn" data-item="{{item}}">
+          <image
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAADG0lEQVRYR8XYW6hNQRzH8e+PvCkRIaIIJbcHHuQBSQk5OZFO4gEllyKlQ6eI5FbKpZCElDxQok4pd5IHScqDFEmEckkkuY3mNLObM2ftvWbtC/NyOmvP3v/P/s9a//nPFm4YYyTJ+P//11/ZwMaY2cAJh1gp6eK/ABljWoDpQLuPKZsZ4A3Q3yF+AoskXWgkyhizA2jzCwRMkXTPZ+htALJzfgDNktobgYowPsRqSUc8aD5wDugeAL4D8yRdqSeqDOYjME7S6w6Qu4+WAKeAbgHgGzBH0s16oMpgPgEzJT2wMUogh1oBHIuufwVmSbpbCyoF0wXkUGuAQxHqs/sW96tBpWIyQQ61AdgXBbepnSHpYRFUEUxZkENtBnZGwd/buiHpcQqqKKYiyKG2AVui4O+AaZKeVEJVg8kFOdRuoDUK/hqYKulZFqpaTBLIofYD66LgLx3qRXi9FkwyyKEOA6si1HOHeuXmhNuBn9qpzuTde53qUM49YeceB5ZF855aFLA22JuqwhTKkMuAreKngcUZT1/fjDJRqsB5mfGvJ2fIv8EYY/e7s8DCCkEKLVP4OYVBLlM93GbclIGqGlN4yaKnaRewKQNktxdb0b+kLlM9MpT1NIWfe8dtyLZbKDQKL1mZOvMnalss4howV5Ltq5JHIVCFotfs9r3JUeTLQJMk24EmjWRQXgU2xvQCrgITo8iXgAWSbK+eO5JAeZigJPQBrgPjo8i2PW6R9DtPlAtKxQSofoBteUdHwc8ASyXZ+63sqAgqiglQA4BbwMgo8klgeaUDaVlQtZgANdihhkWoo5LiTbo0JRNUKyZADQVuA0Mi1AFJ67PWrQuoXpgANdxlalAE2COpS6WPj0E19zNZ39oYM8qh/HHdT9suaWv4nvCg2BBMkKkxwA0gblNaJe318/xReiNQuuherGnXLpOpCa5O9Q5e/wWMkNTRCnvQB8AWNT/qjgkyNQmwvxfYyu7HWH+08qBH9rDfqMzE2TLG2D3vPDAQOBg+cR5kq6rtb+xoSz0IZi1L6jXXefaUZI/ppZG7daQGqNe8v2TEZTSAUxgQAAAAAElFTkSuQmCC"
+            class="del-icon"></image>
+        </view>
       </view>
     </view>
+
   </view>
+</view>
   <view class="empty-view" wx:if="{{ addressList.length <= 0 }}">
-    <image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noAddress-26d570cefa.png"></image>
+    <image class="icon"
+      src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noAddress-26d570cefa.png">
+    </image>
     <text class="text">暂无数据，快去添加吧！</text>
   </view>
   <view class="add-address" bindtap="addressAddOrUpdate" data-address-id="0">新建</view>

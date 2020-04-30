@@ -1,13 +1,12 @@
-import { HEADER, METHOD } from '../config/constants'
-import { ENV } from '../config/env'
+import { HEADER, METHOD } from '../config/constants';
+import { ENV } from '../config/env';
+import { showErrorToast } from './util';
 const interceptors = []
 
-class Request {
+class HttpClient {
   request(option) {
     const { url, method, data = {}, header } = option
-
     let requestheader = { ...HEADER, ...header }
-
     return new Promise((resolve, reject) => {
       try {
         wx.getNetworkType({
@@ -19,7 +18,11 @@ class Request {
                 data,
                 header: requestheader,
                 success: (res) => {
-                  return res.data
+                  // 错误判断
+                  if (res.statusCode !== 200 && res.statusCode !== 201) {
+                    return showErrorToast(res.data.message)
+                  }
+                  resolve(res.data);
                 },
                 fail: (err) => {
                   err && err.errMsg && err.errMsg.indexOf('request:fail') !== -1 ? wx.showToast({
@@ -77,7 +80,8 @@ export function addDefaultInterceptor() {
       return reject(new Error(`internet error: ${status}`))
     }
     const body = res.data;
+    console.log('===================')
     return resolve(body)
   })
 }
-export const request = new Request()
+export const httpClient = new HttpClient()
