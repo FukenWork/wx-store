@@ -1,0 +1,79 @@
+@import "../../colorui/icon.wxss";
+@import "../../colorui/main.wxss";
+
+.button {
+  display: inline;
+  font-weight: 500;
+  font-size: 20rpx;
+  padding: 0;
+  color: var(--gray);
+  position: absolute;
+}
+
+.cu-modal.bottom-modal .cu-dialog {
+  height: 400rpx;
+}
+
+.word {
+  position: absolute;
+  bottom: 1px;
+  left: 8rpx;
+}
+
+.number-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 40rpx auto;
+  width: 90%;
+}
+
+/*主容器*/
+
+.stepper {
+  width: 300rpx;
+  height: 26px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/*加号和减号*/
+
+.stepper text {
+  float: left;
+  width: 79rpx;
+  line-height: 59rpx;
+  text-align: center;
+}
+
+/*数值*/
+
+.stepper input {
+  width: 140rpx;
+  height: 26px;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disable {
+  color: #ccc;
+}
+.price_count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10rpx auto;
+  width: 90%;
+}

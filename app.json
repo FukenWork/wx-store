@@ -1,20 +1,44 @@
 {
-  "pages": [
-    "pages/address/address",
-    "pages/index/index",
-    "pages/detail/detail",
-    "pages/own/own",
-    "pages/category/category",
-    "pages/shop-car/shop-car",
-    "pages/search/search",
-    "pages/address/address-add/address-add",    
-    "pages/feedback/feedback"
+  "pages":[
+    "pages/index/index"
   ],
+  "subPackages":[
+    {
+      "root": "module-user/",
+      "pages": [
+        "own/own",
+        "shop-car/shop-car",
+        "address/address",
+        "address/address-add/address-add",
+        "feedback/feedback",
+        "collect/collect"
+      ]
+    },
+    {
+      "root":"module-category/",
+      "pages":[
+        "detail/detail",
+        "category/category",
+        "add/add",
+        "search/search"
+      ]
+    }
+  ],
+  "preloadRule":{
+    "pages/index/index": {
+      "network":"all",
+      "packages":[
+        "module-user/",
+        "module-category/"
+      ]
+    }
+  },
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "service",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "appVersion": "v1.0.0.0.1"
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"

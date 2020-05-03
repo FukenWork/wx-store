@@ -5,8 +5,11 @@ const interceptors = []
 
 class HttpClient {
   request(option) {
-    const { url, method, data = {}, header } = option
+    const { url, method, data, header } = option;
     let requestheader = { ...HEADER, ...header }
+    wx.showLoading({
+      title: '加载中...',
+    })
     return new Promise((resolve, reject) => {
       try {
         wx.getNetworkType({
@@ -18,6 +21,7 @@ class HttpClient {
                 data,
                 header: requestheader,
                 success: (res) => {
+                  wx.hideLoading();
                   // 错误判断
                   if (res.statusCode !== 200 && res.statusCode !== 201) {
                     return showErrorToast(res.data.message)
@@ -80,7 +84,6 @@ export function addDefaultInterceptor() {
       return reject(new Error(`internet error: ${status}`))
     }
     const body = res.data;
-    console.log('===================')
     return resolve(body)
   })
 }

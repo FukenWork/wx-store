@@ -1,0 +1,41 @@
+<view class="cu-bar bg-white tabbar border shop foot">
+  <view class="action" bindtap="goHome">
+    <text class="cuIcon-home lg text-gray leftPosi"></text> 首页
+  </view>
+  <view class="action" bindtap = "cancelcollect" wx:if="{{collect}}">
+    <text class="cuIcon-likefill lg text-gray"></text> 已收藏
+  </view>
+  <view class="action" bindtap = "collect" wx:else>
+    <text class="cuIcon-like lg text-gray"></text> 收藏
+  </view>
+  <view class="bg-orange submit" bindtap="openCar">加入购物车</view>
+  <view class="bg-red submit">立即订购</view>
+</view>
+<!-- 内容展示区 -->
+<view class="content">
+  <view class="shopCar" bindtap="goShop">
+    <view class="cu-tag badge">{{shopCount}}</view>
+    <text class="cuIcon-cart lg text-gray positionSize"></text>
+  </view>
+  <image src="{{goodsInfo.goodsImg}}" style="height: 800rpx;"></image>
+  <view class="goods_name">{{goodsInfo.goodsName}}</view>
+  <view class="goods_price">
+    <view class="preprice">￥<text style="font-size:50rpx">{{goodsInfo.prePrice}}</text></view>
+    <view class="price"><text class="other">￥{{goodsInfo.price}}</text>
+    <text style="padding: 0px 30rpx"> 销量：{{goodsInfo.saleCount}}件</text>
+    </view>
+    <text bindtap="showModal" class="cuIcon-share lg text-gray leftPosi" style="font-size: 40rpx;margin-right:20rpx"></text>
+  </view>
+  <view style="width:100%;height:2rpx;background:#888;margin-top:20rpx;"></view>
+</view>
+<!-- 底部弹窗 -->
+<modal
+modalName="{{modalName}}"
+modalShare="{{modalShare}}"
+modalCar="{{modalCar}}"
+price="{{price}}"
+count="{{count}}"
+goodsImg="{{goodsImg}}"
+goodsName="{{goodsName}}"
+bind:refreshData="refreshData"
+/>

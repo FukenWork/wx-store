@@ -1,3 +1,6 @@
 /**app.wxss**/
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
+button::after {
+  border:none;
+}

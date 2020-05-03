@@ -1,0 +1,29 @@
+<view class="cu-modal bottom-modal {{modalName==='ChooseModal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-blue" bindtap="hideModal">取消</view>
+      <view class="action text-green" bindtap="sure">确定</view>
+    </view>
+    <view class="grid col-3 padding-sm" wx:if="{{modalShare}}">
+      <button open-type="share" class="button">
+        <text class="cuIcon-weixin lg text-gray" style="font-size:60rpx"></text>
+        <view class="word">分享</view>
+      </button>
+    </view>
+    <view wx:if="{{modalCar}}">
+      <view class="price_count">
+        <view style="color:red;font-size:40rpx">￥{{price}}</view>
+        <view>库存{{count}}件</view>
+      </view>
+      <view class="number-count">
+        <view class="number">数量</view>
+        <view class='stepper sum'>
+          <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
+          <input bindinput='bindManual' value='{{num}}'></input>
+          <text bindtap='bindPlus'>+</text>
+        </view>
+      </view>
+      <view>总金额：￥{{price * num}}</view>
+    </view>
+  </view>
+</view>

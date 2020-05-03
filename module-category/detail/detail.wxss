@@ -1,0 +1,49 @@
+.leftPosi {
+  margin-left: 21rpx !important;
+}
+
+.shopCar {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #e2e2e2;
+  top: 20rpx;
+  right: 20rpx;
+  z-index: 999;
+}
+
+.positionSize {
+  font-size: 50rpx !important;
+  position: relative;
+  top: 23rpx;
+  left: 24rpx;
+}
+
+.badge {
+  position: absolute;
+  top: 14rpx !important;
+}
+.goods_name {
+  font-size: 40rpx;
+  font-weight: 600;
+  padding: 20rpx;
+}
+.goods_price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.preprice {
+  color: red;
+  font-size: 30rpx;
+}
+.price {
+  width: 60%;
+  margin-top: 20rpx;
+  color:#888;
+}
+.other {
+  text-decoration-line: line-through;
+}

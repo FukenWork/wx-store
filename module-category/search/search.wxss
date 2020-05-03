@@ -1,0 +1,34 @@
+.search_history {
+  width: 95%;
+  margin: 20rpx auto;
+}
+.cu-tag {
+  margin-right: 20rpx;
+}
+.tar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.noData {
+  margin: 300rpx 300rpx;
+}
+.container_list {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.content {
+  width: 49%;
+  height: 500rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}

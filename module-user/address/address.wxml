@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="address-list" wx:if="{{ addressList.length > 0 }}">
+    <view class="item" wx:for="{{addressList}}" wx:key="index"  data-address-id="{{item.id}}">
+      <view class="c">
+        <view>{{item.username}} | <text  class="cu-tag line-blue">{{item.remark}}</text>
+        <text wx:if="{{item.isdefault}}" class="cu-tag line-red">默认</text>
+        </view>
+        <view class="address" style="margin-top:20rpx;">{{item.detail}} | {{item.phone}}</view>
+      </view>
+      <view class="r">
+        <text class="cuIcon-edit lg text-gray size"  catchtap = "upDateAddress" data-item="{{item}}"></text>
+        <text class="cuIcon-delete lg text-gray size" style="padding: 0px 20rpx; color:red" catchtap = "deleteAddress" data-address-id="{{item.id}}"></text>
+      </view>
+    </view>
+  </view>
+  <view class="empty-view" wx:if="{{ addressList.length <= 0 }}">
+    <image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noAddress-26d570cefa.png"></image>
+    <text class="text">收货地址在哪里</text>
+  </view>
+  <view class="add-address" bindtap="addressAddOrUpdate">新建</view>
+</view>
+<!-- 删除弹窗 -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-content">
+    是否确认删除?
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

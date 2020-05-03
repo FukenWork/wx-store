@@ -12,9 +12,9 @@
 function addZero(value) {
   return value < 10 ? `0${value}` : value
 }
-const timeFormat = {
+const TimeFormat = {
   getTime(value) {
-    const time = new Date(value);
+    const time = new Date(+value);
     const year = time.getFullYear();
     const month = time.getMonth() + 1;
     const day = time.getDate();
@@ -25,4 +25,4 @@ const timeFormat = {
   }
 }
 
-export default timeFormat;
+export default TimeFormat;

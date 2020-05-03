@@ -1,0 +1,13 @@
+  <view class="cu-list menu-avatar" wx:for="{{list}}" wx:key="index" bindtap="goDetail" data-id="{{item.targetId.id}}">
+    <view class="cu-item">
+      <view class="cu-avatar round lg">
+      <image src="{{item.targetId.goodsImg}}" style="width:100rpx;height:100rpx;border-radius:50%"></image>
+      </view>
+      <view class="content">
+        <view class="text-grey">{{item.targetId.goodsName}}</view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">{{item.cTime}}</view>
+      </view>
+    </view>
+  </view>

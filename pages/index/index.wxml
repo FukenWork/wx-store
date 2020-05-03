@@ -19,19 +19,19 @@
     </view>
     <view class="{{pageCur=='basics'?'text-green':'text-gray'}}">首页</view>
   </view>
-  <view class="action" bindtap="navChange" data-cur="component" data-url="/pages/category/category">
+  <view class="action" bindtap="navChange" data-cur="component" data-url="/module-category/category/category">
     <view class='cuIcon-cu-image'>
       <image src="/images/tabbar/component{{pageCur=='component'?'_cur':''}}.png"></image>
     </view>
     <view class="{{pageCur=='component'?'text-green':'text-gray'}}">分类</view>
   </view>
-  <view class="action" bindtap="navChange" data-cur="plugin" data-url="/pages/shop-car/shop-car">
+  <view class="action" bindtap="navChange" data-cur="plugin" data-url="/module-category/shop-car/shop-car">
     <view class='cuIcon-cu-image'>
       <image src="/images/tabbar/plugin{{pageCur=='plugin'?'_cur':''}}.png"></image>
     </view>
     <view class="{{pageCur=='plugin'?'text-green':'text-gray'}}">购物车</view>
   </view>
-  <view class="action" bindtap="navChange" data-cur="about" data-url="/pages/own/own">
+  <view class="action" bindtap="navChange" data-cur="about" data-url="/module-user/own/own">
     <view class='cuIcon-cu-image'>
       <image src="/images/tabbar/about{{pageCur=='about'?'_cur':''}}.png"></image>
     </view>

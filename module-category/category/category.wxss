@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.content {
+  width: 49%;
+  height: 500rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}

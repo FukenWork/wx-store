@@ -9,25 +9,13 @@ const page = {
       type: 'image',
       url: '../../images/banner/1.jpg'
     }, {
-      id: 1,
-      type: 'image',
-      url: '../../images/banner/2.jpg',
-    }, {
-      id: 2,
-      type: 'image',
-      url: '../../images/banner/3.jpg'
-    }, {
-      id: 3,
-      type: 'image',
-      url: '../../images/banner/4.jpg'
-    }, {
       id: 4,
       type: 'image',
       url: '../../images/banner/5.jpg'
     }, {
       id: 5,
       type: 'image',
-      url: '../../images/banner/6.jpg'
+      url: '../../images/banner/7.jpg'
     }],
     navList: HEADER_NAV_LIST,
     pageCur: 'basics'
@@ -42,7 +30,7 @@ const page = {
   },
   gosearch() {
     wx.navigateTo({
-      url: '../search/search',
+      url: '/module-category/search/search',
     })
   },
   // 点击跳转导航
