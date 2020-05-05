@@ -24,6 +24,10 @@ const RequestUrl = {
   // 取消收藏
   cancel: '/api/v1/cancel?id={id}',
   // 根据用户的id获取用户的收藏信息
-  collectByUserId: '/api/v1/getCollectList/{userId}'
+  collectByUserId: '/api/v1/getCollectList/{userId}',
+  // 获取首页商品信息
+  getGoodsListInHome: '/api/v1/getGoods/?page={page}&size={size}',
+  // 小程序登录
+  wxlogin: '/api/v1/wxlogin/{code}/{username}/{userGender}'
 }
 export default RequestUrl;

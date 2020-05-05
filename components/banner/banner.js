@@ -26,5 +26,11 @@ Component({
         cardCur: e.detail.current
       })
     },
+    goDetail(e) {
+      console.log(e);
+      wx.navigateTo({
+        url: `/module-category/detail/detail?id=${e.currentTarget.dataset.id}`,
+      })
+    }
   }
 })

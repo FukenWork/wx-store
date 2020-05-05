@@ -4,3 +4,38 @@
   justify-content: space-around;
   margin: 10rpx;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content {
+  width: 49%;
+  height: 500rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 70rpx;
+  border-bottom: 1px solid black;
+  align-items: cener;
+  line-height: 70rpx;
+  margin-bottom: 4rpx;
+}
+.container-body {
+  margin-bottom: 100rpx;
+}

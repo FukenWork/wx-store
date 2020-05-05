@@ -2,7 +2,7 @@
  * @Author: shichaoxin
  * @Date: 2020-04-30 15:12:00
  * @Last Modified by: shichaoxin
- * @Last Modified time: 2020-05-03 23:08:13
+ * @Last Modified time: 2020-05-05 13:06:56
  */
 
 import RequestUrl from '../config/url';
@@ -61,6 +61,14 @@ class StoreService {
   }
   collectList(userId) {
     const url = stringFormatArr(RequestUrl.collectByUserId, { userId });
+    return httpClient.get(url);
+  }
+  getGoodsListInHome(page, size) {
+    const url = stringFormatArr(RequestUrl.getGoodsListInHome, { page, size });
+    return httpClient.get(url);
+  }
+  wxlogin(code, username, userGender) {
+    const url = stringFormatArr(RequestUrl.wxlogin, {code, username, userGender});
     return httpClient.get(url);
   }
 }

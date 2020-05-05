@@ -11,7 +11,8 @@
         "address/address",
         "address/address-add/address-add",
         "feedback/feedback",
-        "collect/collect"
+        "collect/collect",
+        "pay/pay"
       ]
     },
     {
