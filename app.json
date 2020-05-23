@@ -12,7 +12,7 @@
         "address/address-add/address-add",
         "feedback/feedback",
         "collect/collect",
-        "pay/pay"
+        "order/order"
       ]
     },
     {

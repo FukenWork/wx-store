@@ -38,8 +38,15 @@ export const REMARK_ADDRESS = [
   { name: '政府', color: false }
 ]
 export const GOODS_LIST = [
-  {name: '综合'},
-  {name: '最新'},
-  {name: '价格'},
-  {name: '销量'}
+  {name: '综合', id: 1},
+  {name: '最新', id: 2},
+  {name: '价格', id: 3},
+  {name: '销量', id: 4}
+]
+export const ORDER_LIST = [
+  {name: '全部', id: 1},
+  {name: '待支付', id: 2},
+  {name: '已支付', id: 3},
+  {name: '待评价', id: 4},
+  {name: '已评价', id: 5}
 ]
